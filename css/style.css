@@ -1,0 +1,130 @@
+#embark-post-feed a {
+	color: inherit;
+}
+#post-feed-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 96px;
+}
+#post-feed-container .post-thumbnail {
+    padding-top: 62%;
+    position: relative;
+    overflow: hidden;
+}
+#post-feed-container .post-thumbnail img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: 0.3s ease;
+}
+#post-feed-container .post-item:hover .post-thumbnail img {
+    transform: scale(1.1);
+    transition: 0.2s ease;
+}
+.post-feed-filters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.post-feed-filters > * {
+    width: auto;
+}
+.post-item {
+    text-align: center;
+    position: relative;
+    opacity: 0;
+    top: 50px;
+    transition: all ease;
+}
+.post-content-wrapper > div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 32px;
+}
+.post-item h3 {
+    margin: 0px;;
+}
+#cat-filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+#cat-filter button {
+    padding: 9px 28px;
+    border-radius: 100px;
+    background: transparent;
+    border: 1px solid #000;
+    color: inherit;
+    transition: 0.1s all;
+}
+#cat-filter button:hover, #cat-filter button.active {
+    color: #fff;
+    background: #000;
+    transition: 0.1s all;
+}
+#embark-post-feed .pagination {
+    margin: var(--section-padding-y) auto 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+#embark-post-feed .pagination a {
+    display: inline-block;
+    padding: 4px;
+    width: 32px;
+    height: 32px;
+    line-height: 1;
+    text-align: center;
+	color: #A39C99;
+}
+#embark-post-feed .pagination a.active {
+	color: #372822;
+}
+.order-filter-wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    align-content: center;
+}
+.filter-label {
+    min-width: fit-content;
+    margin-right: 20px;
+}
+
+@media all and (max-width:1440px){
+	#post-feed-container {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 48px;
+	}
+}
+@media all and (max-width:900px){
+	.post-feed-filters {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.order-filter-wrapper .filter-label {
+		text-align: right;
+	}
+	#post-feed-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	#cat-filter .filter-label {
+		width: 100%;
+	}
+}
+@media all and (max-width:767px){
+	#post-feed-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
